@@ -10,7 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            RowContactsScreen(contacts: Person.getContactList())
+                .tabItem {
+                    Image(systemName: "person.circle")
+                    Text("Contacts")
+            }
+            SectionContactsScreen(contacts: Person.getContactList())
+                .tabItem {
+                    Image(systemName: "person.circle.fill")
+                    Text("Contacts")
+            }
+        }
     }
 }
 
