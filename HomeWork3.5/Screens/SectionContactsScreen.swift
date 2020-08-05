@@ -14,11 +14,11 @@ struct SectionContactsScreen: View {
     
     var body: some View {
         NavigationView {
-            List() {
-                ForEach(contacts, id: \.self) { section in
-                    Section(header: Text(section.fullName)) {
-                        Text(section.phoneNumber)
-                        Text(section.email)
+            List {
+                ForEach(contacts) { person in
+                    Section(header: Text(person.fullName)) {
+                        Text(person.phoneNumber)
+                        Text(person.email)
                     }
                 }
                 .navigationBarTitle("Persons List")
